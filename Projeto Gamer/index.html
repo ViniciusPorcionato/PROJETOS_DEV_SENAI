@@ -1,0 +1,373 @@
+<html lang="pr-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Gamer</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <!-- Parte de cima do header -->
+        <div class="header-top">
+
+            <div class="layout-grid alinhamento-between-center">
+
+                <div class="contatos">
+
+                    <div class="phone">
+                        <img src="./assets/icons/icone_telefone.svg" alt="icone de telefone de contato">
+                        <p>(11) 0900-1010</p>
+                    </div>
+                    <div class="email">
+                        <img src="./assets/icons/icone_email.svg" alt="icone de email de contato">
+                        <p>contato@gamer.com.br</p>
+                    </div>
+                </div>
+
+                <div class="midias-sociais">
+                    <a href="https://pt-br.facebook.com/">
+                        <img src="./assets/icons/icone-facebook.svg" alt="imagem link facebook empresa">
+                    </a>
+                    <a href="https://br.linkedin.com/">
+                        <img src="./assets/icons/icone-linkedin.svg" alt="imagem link do linkedin da empresa">
+                    </a>
+                    <a href="https://www.instagram.com/">
+                        <img src="./assets/icons/icone-instagram.svg" alt="imagem link do instagram da empresa">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Parte de baixo do header -->
+        <div class="header-bottom">
+
+            <div class="layout-grid alinhamento-between-center">
+
+                <!-- Menu hamburger. Visivel apenas no smartphone -->
+                <img class="menu-hamburger" onclick="mostrarMenu()" src="./assets/icons/icon-hamburger-menu.svg"
+                    alt="icone de barras. Abre e fecha o menu principal, no celular">
+
+                <img class="logo" src="./assets/img/logotipo-gamer.svg"
+                    alt="imagem logotipo gamer com um controle de video game ao centro">
+
+                <nav class="menu" id="menu">
+                    <a href="./index.html">Início</a>
+                    <a href="./jogadores.html">Jogadores</a>
+                    <a href="./equipes.html">Equipes</a>
+                    <a href="">Notícias</a>
+
+                    <!-- visivel apenas no mobile -->
+                    <a class="phone">
+                        <img src="./assets/icons/icone_telefone.svg" alt="icone de telefone de contato">
+                        <p>(11) 0900-1010</p>
+                    </a>
+                    <a class="email">
+                        <img src="./assets/icons/icone_email.svg" alt="icone de email de contato">
+                        <p>contato@gamer.com.br</p>
+                    </a>
+
+                    <!-- visivel apenas no mobile -->
+                    <div class="midias-sociais">
+                        <a href="https://pt-br.facebook.com/">
+                            <img src="./assets/icons/icone-facebook.svg" alt="imagem link facebook empresa">
+                        </a>
+                        <a href="https://br.linkedin.com/">
+                            <img src="./assets/icons/icone-linkedin.svg" alt="imagem link do linkedin da empresa">
+                        </a>
+                        <a href="https://www.instagram.com/">
+                            <img src="./assets/icons/icone-instagram.svg" alt="imagem link do instagram da empresa">
+                        </a>
+                    </div>
+
+                </nav>
+
+                <!-- Menu points, visível apenas no smartphone -->
+                <img class="menu-pontinhos" onclick="mostrarMenuUsuarios()" src="./assets/icons/icon-points.svg"
+                    alt="icone de três pontos. Abre e fecha o menu usuários, no celular">
+
+                <div id="menu-usuarios" class="menu-usuarios">
+
+                    <a href="./login.html">
+                        <img src="./assets/icons/icon-user.svg" alt="icone de perfil">
+                    </a>
+                    <a href="">
+                        <img src="./assets/icons/icon-bag.svg" alt="icone de bag">
+                    </a>
+                    <a href="">
+                        <img src="./assets/icons/icon-search.svg" alt="icone de lupa/search">
+                    </a>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+
+    
+    <main>
+
+
+        <section>
+
+            <div class="banner">
+
+                <h1>liga gamer</h1>
+                <button>
+                    Sobre
+                </button>
+            </div>
+
+        </section>
+
+        <section class="section-curiosidades ">
+
+            <div class="layout-grid section-curiosidades-flex">
+
+                <article class="card-fifa">
+                    <div class="box-transparente">
+                        <div class="box-paralelograma">
+                            <p class="box-paralelograma-p">mais popular</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card-cs">
+                    <div class="box-transparente">
+                        <div class="box-paralelograma">
+                            <p class="box-paralelograma-p">último jogo </p>
+                        </div>
+                    </div>
+                </article>
+
+                <div />
+
+        </section>
+
+        <!-- section entre para o time -->
+        <section class="section-entre-para-o-time">
+            <h1>entre para o time progamer</h1>
+            <hr>
+            <div class="layout-grid section-time-flex">
+                <!-- article com a imagem e o box -->
+                <article class="imagem-killjoy">
+                    <div class="box-20-jogos-diferentes">
+                        <img class="icon-controle" src="./assets/icons/icon-controle.svg"
+                            alt="icone controle de videogame">
+                        <h2>20 jogos diferentes</h2>
+                        <p class="20-jogos-diferentes-p">São mais de 20 jogos em 2 plataformas dispóniveis para que
+                            você
+                            possa aprender melhores técnicas.</p>
+                    </div>
+                </article>
+
+                <article class="imagem-lol">
+                    <div class="box-53-professores">
+                        <img class="icon-jogador" src="./assets/icons/icon-gamer-controle.svg"
+                            alt="icone controle de um jogador gamer com um controle">
+                        <h2>53 professores</h2>
+                        <p class="53-professores-p">Temos 53 Proplayers no nosso time para ensinar todas as es-
+                            tratégias,
+                            você vai aprender do básico ao avançado.
+                            Tempo de treinamento, descanso, equipamentos. .</p>
+                    </div>
+            </div>
+            </article>
+
+        </section>
+
+        <!-- Section noticias -->
+
+        <section class="noticias">
+            <div class="title-flex">
+                <h1>notícias</h1>
+                <hr>
+            </div>
+            <article class="noticias-flex">
+                <!-- div com todas as card box -->
+
+                <div class="box-cards-noticias ">
+
+                    <!-- cards box -->
+                    <div class="card-flex ">
+                        <div class="box-noticia">
+                            <img class="imagem-card" src="./assets/img/article-vct.png" alt="Palco campeonato vct">
+                            <h2>título da notícia</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has
+                                been
+                                the industry's standard dummy text ever since.</p>
+                        </div>
+
+                        <div class="box-noticia">
+                            <img class="imagem-card" src="./assets/img/article2- ssesports.png" alt="ss esports campea">
+                            <h2>título da notícia</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has
+                                been
+                                the industry's standard dummy text ever since.</p>
+                        </div>
+
+                        <div class="box-noticia">
+                            <img class="imagem-card" src="./assets/img/article3-loud.png" alt="loud campea">
+                            <h2>título da notícia</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has
+                                been
+                                the industry's standard dummy text ever since.</p>
+                        </div>
+
+                        <div class="box-noticia">
+                            <img class="imagem-card" src="./assets/img/article4 - palco-vct.png" alt="Palco campeonato vct">
+                            <h2>título da notícia</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has
+                                been
+                                the industry's standard dummy text ever since.</p>
+                        </div>
+                        <div class="box-noticia">
+                            <img class="imagem-card" src="./assets/img/article3-loud.png" alt="Palco campeonato vct">
+                            <h2>título da notícia</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has
+                                been
+                                the industry's standard dummy text ever since.</p>
+                        </div>
+
+                        <div class="box-noticia">
+                            <img class="imagem-card" src="./assets/img/article4 - palco-vct.png" alt="Palco campeonato vct">
+                            <h2>título da notícia</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has
+                                been
+                                the industry's standard dummy text ever since.</p>
+                        </div>
+
+                        <div class="box-noticia">
+                            <img class="imagem-card" src="./assets/img/article-vct.png" alt="Palco campeonato vct">
+                            <h2>título da notícia</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has
+                                been
+                                the industry's standard dummy text ever since.</p>
+                        </div>
+
+                        <div class="box-noticia">
+                            <img class="imagem-card" src="./assets/img/article2- ssesports.png" alt="Palco campeonato vct">
+                            <h2>título da notícia</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has
+                                been
+                                the industry's standard dummy text ever since.</p>
+                        </div>
+                    </div>
+                    
+
+                </div>
+
+            </article>
+
+
+
+        </section>
+
+    </main>
+
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-gradient"></div>
+        <div class="layout-grid footer-flex">
+            <div class="footer-inicio">
+                <img class="logo" src="./assets/img/logotipo-gamer.svg" alt="Ícone gamer">
+                <p>Nosso sucesso na criação de soluções de negócios se deve em grande parte a nossa equipe talentosa e
+                    altamente comprometida.</p>
+            </div>
+            <div class="redes-sociais">
+                <a class="rede-social-box" href="">
+                    <img src="./assets/icons/icon-facebook-black.svg" alt="">
+                </a>
+                <a class="rede-social-box" href="">
+                    <img src="./assets/icons/icon-linkedin-black.svg" alt="">
+                </a>
+                <a class="rede-social-box" href="">
+                    <img src="./assets/icons/icon-instagram-black.svg" alt="">
+                </a>
+            </div>
+            <div class="links-uteis">
+                <div class="footer-titulo">
+                    <h2>Links Úteis</h2>
+                    <hr>
+                </div>
+                <div class="links">
+                    <a class="link">
+                        <hr>
+                        <p>Início</p>
+                    </a>
+                    <a class="link">
+                        <hr>
+                        <p>Jogadores</p>
+                    </a>
+                    <a class="link">
+                        <hr>
+                        <p>Notícias</p>
+                    </a>
+                    <a class="link">
+                        <hr>
+                        <p>Login</p>
+                    </a>
+                    <a class="link">
+                        <hr>
+                        <p>Equipes</p>
+                    </a>
+                </div>
+            </div>
+            <div class="contatos">
+                <div class="footer-titulo">
+                    <h2>Contatos</h2>
+                    <hr>
+                </div>
+                <div class="contato">
+                    <p class="contato-topico">Localização:</p>
+                    <p class="contato-descricao">Rua Niterói, 180 - São Caetano do Sul - SP</p>
+                    <p class="contato-topico">Junte-se a nós:</p>
+                    <p class="contato-descricao">contato@gamer.com.br</p>
+                    <p class="contato-topico">Telefone:</p>
+                    <p class="contato-descricao">(11) 0900-1010</p>
+                </div>
+            </div>
+            <div class="newsletter">
+                <div class="footer-titulo">
+                    <h2>Newsletter</h2>
+                    <hr>
+                </div>
+                <form action="" class="newsletter-form">
+                    <input class="email-input" type="email" placeholder="Digite seu e-mail:">
+                    <button class="send-button">Enviar</button>
+                </form>
+            </div>
+            <p class="copyright-text">©Copyright2023-GamerJogosDigitais</p>
+        </div>
+    </footer>
+
+
+
+
+    <!-- funcionalidade das barras no monile -->
+    <script src="./js/funcoes.js">
+
+    </script>
+
+
+
+
+</body>
+
+</html>

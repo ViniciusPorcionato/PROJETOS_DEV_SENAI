@@ -1,0 +1,619 @@
+/* Imports de fonts */
+
+@font-face {
+    font-family: Inter;
+    src: url(../assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+@font-face {
+    font-family: Quicksand;
+    src: url(../assets/fonts/Quicksand/Quicksand-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Titillium_Web;
+    src: url(../assets/fonts/Titillium_Web/TitilliumWeb-Black.ttf);
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: Titillium_Web;
+    src: url(../assets/fonts/Titillium_Web/TitilliumWeb-Bold.ttf);
+    font-weight: bold;
+}
+
+
+@font-face {
+    font-family: Titillium_Web;
+    src: url(../assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf);
+    
+}
+
+
+/* Classes genéricas */
+
+.mostrar-menu{
+
+    left: 0 !important;
+}
+
+:root {
+    --cor-primaria: rgba(27, 20, 38, 1);
+    --cor-secundaria: rgba(249, 170, 1, 1);
+    --cor-de-fundo: linear-gradient(to right bottom, rgba(27, 20, 38, 0.7), rgba(27, 20, 38, 0.4));
+    --cor-da-borda: rgba(255, 255, 255, 0.3);
+
+    --altura-section: calc(100vh - 60px);
+}
+
+.mostrar-menu-usuarios{
+
+    right: 0 !important;
+}
+
+/* layout-grid */
+
+.layout-grid{
+
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.alinhamento-between-center{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Reset CSS */
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+/* MOBLILE FIRST (<=767px)*/
+
+/*********HEADER*******/
+
+header{
+
+    position: fixed;
+    width: 100vw;
+    z-index: 100;
+    background-color: #1B1426;
+    height: 60px;
+
+}
+
+header .header-top{
+
+    display: none;
+}
+
+header .header-bottom{
+
+    height: 60px;
+}
+
+/* logo */
+header .logo{
+
+    width: 86px;
+    height: 25px;
+
+}
+
+/* box com os links nav br */
+header .header-bottom nav{
+
+    position: fixed;
+    left: -80vw;
+    top: 60px;
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    width: 80vw;
+
+    /* Viewport - 60px do header */
+    height: calc(100vh - 60px);
+
+    /* Fazer um linear gradiente (degradê) */
+
+    background-image: linear-gradient(to right bottom, rgba(27, 20, 38, 0.7), rgba(27, 20, 38, 0.4));
+
+    /* adicionar o efeito de borrado */
+    backdrop-filter: blur(45px);
+
+
+    transition: left 0.4s;
+    
+    
+
+}
+
+/* config dos conteúdos dentro da nav bar */
+header .header-bottom nav > a{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    border-bottom: 2px solid #F9AA01;
+    padding: 30px 0;
+    color: white;
+    text-align: center;
+    font-family: Inter;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* pseudo elemento */
+header .header-bottom nav a:last-of-type {
+    
+    border: none;
+
+}
+
+header .header-bottom nav .midias-sociais{
+
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    
+
+}
+
+header .menu-usuarios{
+
+    position: fixed;
+    right: -20vw;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 20vw;
+    padding: 15px;
+    background-image: linear-gradient(to right bottom, rgba(27, 20, 38, 0.7), rgba(27, 20, 38, 0.4));
+    backdrop-filter: blur(10px);
+    gap: 20px;
+
+    transition: right 0.4s;
+}
+
+
+/* MAIN */
+
+main{
+ 
+    height:687px;
+    width: 100%;
+    padding-top: 60px;
+}
+
+.login{
+    background-image: url(../assets/img/Banner_Login.png);
+    background-size: cover;
+    width: 100%;
+    height: 687px;
+
+}
+
+.login-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 100%;
+    height: 460px;
+    border: 2px solid transparent;
+    border-image-slice: 1;
+    background-image: linear-gradient( to right bottom,  rgba(27, 20, 38, 0.6), rgba(60, 3, 65, 0.6));
+    background: linear-gradient(to right bottom,  rgba(27, 20, 38, 0.8), rgba(60, 3, 65, 0.7)) content-box, linear-gradient(90deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, .1)) border-box;  
+    border-radius: 8px;
+    backdrop-filter:blur(2px);   
+}
+
+
+
+main h1{
+    font-family: Titillium_Web;
+    font-weight: 900;
+    font-size: 28px;
+    text-transform: uppercase;
+    border-top: 2px solid #F9AA01;
+}
+
+.line-input{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    align-items: center;
+    width: 273px;
+    height: 40px;
+    border: 2px solid transparent;
+    background:
+        /* fundo */
+        linear-gradient(to right bottom, rgb(160, 160, 160, 1), rgba(255, 255, 255, 0.080)) content-box,
+        /* fundo borda */
+        linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, .1)) border-box;
+    border-radius: 8px;
+
+}
+
+.line-input input{
+    width: 90%;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+
+}
+
+.line-input input::placeholder{
+    color: white;
+    font-family: Titillium_Web; 
+    font-style: normal;
+    font-size: 16px;
+
+}
+#senha{
+
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+#email{
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+
+button{
+    font-family: Titillium_Web;
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: capitalize;
+    width: 273px;
+    height: 40px;
+    background-color: #F9AA01;
+    border: none;
+    border-radius: 8px;
+
+}
+
+
+
+
+/*********FOOTER********/
+footer {
+    height: 1230px;
+    background-image: url(../assets/img/backgroung_footer-mobile.png);
+    position: relative;
+    z-index: 10;
+}
+
+.footer-gradient {
+    position: absolute;
+    top: -3px;
+    z-index: 11;
+    height: 200px;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0, 1), rgba(27, 20, 38, 0.1));
+}
+
+.footer-flex {
+    height: 100%;
+    padding: 60px 0 25px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    z-index: 12;
+}
+
+.footer-titulo, .footer-inicio, .redes-sociais,
+.links-uteis, .contatos, .newsletter {
+    width: 100%;
+}
+
+footer .footer-titulo h2 {
+    font-family: Titillium_Web;
+    font-weight: 900;
+    font-size: 30px;
+    letter-spacing: 0.6px;
+    color: white;
+}
+
+footer .footer-titulo hr {
+    border-bottom: 3px solid var(--cor-secundaria);
+    width: calc(100% / 3);
+    margin-bottom: 45px;
+}
+
+footer .footer-inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    /* background-image: linear-gradient(from top to bottom right, rgba(27, 20, 38, 0.5), rgba(27, 20, 38, 0.1)); */
+}
+
+.footer-inicio .logo {
+    width: 130px;
+    height: 38px;
+}
+
+.footer-inicio p {
+    color: white;
+    font-family: Quicksand, sans-serif;
+    font-size: 14px;
+}
+
+footer .redes-sociais {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .redes-sociais .rede-social-box {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: var(--cor-secundaria);
+}
+
+footer .links-uteis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.links-uteis .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 40px;
+}
+
+.links-uteis .link {
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 0 10px;
+}
+
+.links-uteis .link hr {
+    border: 1px solid var(--cor-secundaria);
+    width: 10px;
+    height: 1px;
+}
+
+.links-uteis .link p {
+    font-family: Titillium_Web;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.contatos .contato {
+    font-family: Titillium_Web;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.contato .contato-topico { color: var(--cor-secundaria); }
+.contato .contato-descricao { color: white; }
+
+
+footer .newsletter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.newsletter .newsletter-form {
+    height: 95px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.newsletter-form .email-input {
+    height: 40px;
+    width: 100%;
+    padding-left: 10px;
+    border-radius: 8px;
+    border: 1px solid grey;
+    background-color: transparent;
+    background-image: linear-gradient(to right, rgba(239, 239, 239, 0.5), rgba(239, 239, 239, 0.2));
+}
+
+.newsletter-form .send-button {
+    height: 40px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--cor-secundaria);
+    font-family: Titillium_Web;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.newsletter-form .email-input::placeholder {
+    color: white;
+    font-family: Titillium-Web;
+    font-size: 16px;
+}
+
+footer .copyright-text {
+    font-family: Titillium-Web;
+    color: white;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Desktop >=1200px */
+@media screen and (min-width:1200px) {
+    
+    .layout-grid {
+        width: 100%;
+        max-width: 1200px;
+
+    }
+
+    /* header */
+    header {
+        height: 140px;
+        position: static;
+        width: 100%;
+    }
+
+    header .header-top {
+        height: 50px;
+        display: block;
+        border-bottom: 2px solid #F9AA01;
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: regular;
+    }
+
+    header .header-top .contatos {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 450px;
+
+    }
+
+    /* divs .phone, .mail */
+    header .header-top .contatos > div {
+        display: flex;
+        gap: 10px;
+        width: 200px;
+    }
+
+
+    header .header-top .midias-sociais {
+        width: 140px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* esconde os elementos desnecessários */
+    header .header-bottom .menu-hamburger,
+    header .header-bottom .menu-pontinhos,
+    header .header-bottom nav .phone,
+    header .header-bottom nav .email,
+    header .header-bottom nav .midias-sociais {
+        display: none;
+    }
+
+    header .logo {
+        width: 200px;
+        height: 40px;
+    }
+
+    header .header-bottom{
+
+        height: 90px;
+
+    }
+
+    header .header-bottom nav {
+        position: static;
+        width: 440px;
+        height: 50px;
+        padding-bottom: 0;
+        flex-direction: row;
+        align-items: center;
+        /* background-color: red; */
+        justify-content: space-between;
+    }
+
+    header .header-bottom nav > a {
+        font-size: 14px;
+        padding: 0;
+        border: none;
+    }
+
+    header .header-bottom .menu-usuarios {
+        position: static;
+        width: 140px;
+        flex-direction: row;
+        justify-content: space-between;
+        height: auto;
+        background-color: transparent;
+        background-image: none;
+        padding: 0;
+    }
+
+}
+
+/* MAIN */
+

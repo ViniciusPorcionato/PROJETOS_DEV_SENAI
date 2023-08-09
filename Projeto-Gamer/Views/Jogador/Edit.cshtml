@@ -1,0 +1,108 @@
+@model Jogador
+
+@{
+
+    ViewData["Title"] = "Edit";
+
+}
+
+<link rel="stylesheet" href="~/css/edit-jogadores.css">
+
+@if (ViewBag.UserName == null)
+{
+    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">Login</a>
+}
+else
+{
+
+    <!-- MAIN -->
+    <main>
+
+        <section class="container-grid cadastro-equipes">
+
+
+            <form method="post" action="@Url.Action("Atualizar")" enctype="multipart/form-data" class="frm-cad-equipe">
+                <div class="cadequipe-titulo">
+                    <h1>Edição de Jogadores</h1>
+                    <hr>
+                </div>
+
+                <select class="campo-entrada" name="IdEquipe" id="IdEquipe">
+                    <option value="0">Selecione: </option>
+                    @foreach (Equipe item in ViewBag.Equipe)
+                    {
+                        @if (item.IdEquipe == ViewBag.Jogador.IdEquipe)
+                        {
+                            <option value="@item.IdEquipe" selected>@item.Nome</option>
+                        }
+                        else
+                        {
+                            <option value="@item.IdEquipe">@item.Nome</option>
+                        }
+                    }
+                    
+                </select>
+
+                <input type="hidden" name="IdJogador" value="@ViewBag.Jogador.IdJogador">
+
+                <input class="campo-entrada" type="text" name="Nome" value="@ViewBag.Jogador.Nome" id="nome-jogador"
+                    placeholder="Digite o nome do Jogador:">
+
+                <input class="campo-entrada" type="email" name="Email" value="@ViewBag.Jogador.Email" id="email-jogador"
+                    placeholder="Digite o Email do Jogador:">
+
+                <input class="campo-entrada" type="password" name="Senha" value="@ViewBag.Jogador.Senha"
+                    placeholder="Digite a Senha:">
+
+                <button type="submit">Atualizar</button>
+
+            </form>
+
+    </main>
+
+}
+
+
+@* <h2>Edição de Jogadores</h2>
+
+@if (ViewBag.UserName == null)
+{
+<a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">Login</a>
+}
+else
+{
+<form method="post" action="@Url.Action("Atualizar")" enctype="multipart/form-data">
+
+<input type="hidden" name="IdJogador" value="@ViewBag.Jogador.IdJogador">
+
+<label for="">Nome Jogador</label>
+<input type="text" name="Nome" value="@ViewBag.Jogador.Nome">
+
+<label for="">Email</label>
+<input type="email" name="Email" value="@ViewBag.Jogador.Email">
+
+<label for="">Senha</label>
+<Input type="password" name="Senha" value="@ViewBag.Jogador.Senha"></Input>
+
+<label for="">Equipe</label>
+<select name="IdEquipe" id="IdEquipe">
+<option value="0">Selecione: </option>
+@foreach (Equipe item in ViewBag.Equipe)
+{
+@if (item.IdEquipe == ViewBag.Jogador.IdEquipe)
+{
+<option value="@item.IdEquipe" selected>@item.Nome</option>
+}
+else
+{
+<option value="@item.IdEquipe">@item.Nome</option>
+}
+}
+</select>
+
+<button type="submit">Atualizar</button>
+
+
+</form>
+
+} *@
