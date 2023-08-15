@@ -1,0 +1,6 @@
+--DQL - DATA QUERY LANGUAGE
+
+USE Health_Clinic_TD
+
+SELECT 
+FROM

@@ -7,10 +7,10 @@ USE Health_Clinic_TD
 CREATE TABLE Clinica(
 
 IdClinica INT PRIMARY KEY IDENTITY,
-NomeFantasia VARCHAR(50),
-RazaoSocial VARCHAR(150),
-CNPJ CHAR(14),
-Endereco VARCHAR(200),
+NomeFantasia VARCHAR(50)NOT NULL,
+RazaoSocial VARCHAR(150)NOT NULL,
+CNPJ CHAR(14) NOT NULL,
+Endereco VARCHAR(200) NOT NULL,
 HorarioAbertura TIME,
 HoraFechamento TIME
 
@@ -20,14 +20,14 @@ HoraFechamento TIME
 CREATE TABLE TipoUsuario(
 
 IdTipoUsuario INT PRIMARY KEY IDENTITY,
-TituloTipoUsuario VARCHAR(50)
+TituloTipoUsuario VARCHAR(50) NOT NULL
 
 );
 
 CREATE TABLE Especialidade(
 
 IdEspecialidade INT PRIMARY KEY IDENTITY,
-TituloEspecialidade VARCHAR(100)
+TituloEspecialidade VARCHAR(100) NOT NULL
 
 );
 
@@ -35,30 +35,30 @@ TituloEspecialidade VARCHAR(100)
 CREATE TABLE Usuario(
 
 IdUsuario INT PRIMARY KEY IDENTITY,
-IdTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(IdTipoUsuario),
-Nome VARCHAR(100),
-Email VARCHAR(100),
-Senha VARCHAR(50)
+IdTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(IdTipoUsuario)NOT NULL,
+Nome VARCHAR(100)NOT NULL,
+Email VARCHAR(100)NOT NULL,
+Senha VARCHAR(50)NOT NULL,
+DataNascimento DATE
 );
 
 CREATE TABLE Paciente(
 
 IdPaciente INT PRIMARY KEY IDENTITY,
-IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario),
-RG CHAR(9),
-CPF CHAR(11),
-DataNascimento DATE,
-Endereco VARCHAR(100),
-Telefone VARCHAR(9)
+IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario)NOT NULL,
+RG CHAR(9)NOT NULL,
+CPF CHAR(11)NOT NULL,
+Endereco VARCHAR(100) NOT NULL,
+Telefone VARCHAR(9)NOT NULL
 );
 
 CREATE TABLE Medico(
 
 IdMedico INT PRIMARY KEY IDENTITY,
-IdClinica INT FOREIGN KEY REFERENCES Clinica(IdClinica),
-IdEspecialidade INT FOREIGN KEY REFERENCES Especialidade(IdEspecialidade),
-IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario),
-CRM CHAR(8)
+IdClinica INT FOREIGN KEY REFERENCES Clinica(IdClinica)NOT NULL,
+IdEspecialidade INT FOREIGN KEY REFERENCES Especialidade(IdEspecialidade)NOT NULL,
+IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario)NOT NULL,
+CRM VARCHAR(8)NOT NULL
 
 );
 
@@ -66,10 +66,24 @@ CRM CHAR(8)
 CREATE TABLE Consulta(
 
 IdConsulta INT PRIMARY KEY IDENTITY,
-IdMedico INT FOREIGN KEY REFERENCES Medico(IdMedico),
-IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente),
-IdClinica INT FOREIGN KEY REFERENCES Clinica(IdClinica),
+IdMedico INT FOREIGN KEY REFERENCES Medico(IdMedico)NOT NULL,
+IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente)NOT NULL,
+IdClinica INT FOREIGN KEY REFERENCES Clinica(IdClinica)NOT NULL,
 Descricao VARCHAR(250),
-HoraConsulta DATE
+HoraConsulta TIME,
+DataConsulta DATE
 
 );
+
+
+
+
+CREATE TABLE Comentario(
+
+IdComentario INT PRIMARY KEY IDENTITY,
+IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente),
+IdConsulta INT FOREIGN KEY REFERENCES Consulta(IdConsulta),
+Descricao VARCHAR(250)
+
+);
+
