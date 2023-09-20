@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace webapi.event_.tarde.Migrations
 {
     /// <inheritdoc />
-    public partial class BD_v1 : Migration
+    public partial class BD : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -41,12 +41,12 @@ namespace webapi.event_.tarde.Migrations
                 name: "TipoUsuario",
                 columns: table => new
                 {
-                    IdTTipoUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IdTipoUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Titulo = table.Column<string>(type: "VARCHAR(100)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TipoUsuario", x => x.IdTTipoUsuario);
+                    table.PrimaryKey("PK_TipoUsuario", x => x.IdTipoUsuario);
                 });
 
             migrationBuilder.CreateTable(
@@ -94,7 +94,7 @@ namespace webapi.event_.tarde.Migrations
                         name: "FK_Usuario_TipoUsuario_IdTipoUsuario",
                         column: x => x.IdTipoUsuario,
                         principalTable: "TipoUsuario",
-                        principalColumn: "IdTTipoUsuario",
+                        principalColumn: "IdTipoUsuario",
                         onDelete: ReferentialAction.Cascade);
                 });
 

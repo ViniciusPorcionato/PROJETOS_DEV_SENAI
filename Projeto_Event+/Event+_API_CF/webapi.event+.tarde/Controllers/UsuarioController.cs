@@ -18,7 +18,12 @@ namespace webapi.event_.tarde.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
-        [HttpPost("Cadastrar")]
+        /// <summary>
+        /// Endpoint criado para cadastrar novo usuário
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        [HttpPost("CadastrarUsuário")]
         public IActionResult Post(Usuario usuario)
         {
             try
@@ -32,6 +37,58 @@ namespace webapi.event_.tarde.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        /// <summary>
+        /// Endpoint criado para buscar usuário po Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("BuscarPorId/{id}")]
+        public IActionResult GetById(Guid id)
+        {
+            try
+            {
+                Usuario usuarioBuscado = _usuarioRepository.BuscarPorId(id);
+                if (usuarioBuscado == null)
+                {
+                    return NotFound("Tipo de evento buscado não encontrada !");
+                }
+
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Endpoint criado para buscar usuário por email e senha
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("BuscarPorEmailESenha")]
+        public IActionResult GetByEmailEndPassword(string email, string senha)
+        {
+            try
+            {
+                Usuario usuarioBuscado = _usuarioRepository.BuscarPorEmailESenha(email, senha);
+                if (usuarioBuscado == null)
+                {
+                    return NotFound("Tipo de evento buscado não encontrada !");
+                }
+
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+                throw;
+            }
+        }
+
+
 
     }
 }

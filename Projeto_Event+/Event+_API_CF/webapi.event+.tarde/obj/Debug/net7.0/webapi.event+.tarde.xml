@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>webapi.event+.tarde</name>
+    </assembly>
+    <members>
+        <member name="M:webapi.event_.tarde.Controllers.InstituicaoController.Post(webapi.event_.tarde.Domains.Instituicao)">
+            <summary>
+            Endpoint criado para cadastrar nova instituição
+            </summary>
+            <param name="novaInstituicao"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.InstituicaoController.Delete(System.Guid)">
+            <summary>
+            Endpoint criado para deletar instituição existente
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.InstituicaoController.GetById(System.Guid)">
+            <summary>
+            Endpoint criado para buscar instituição por Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.InstituicaoController.Get">
+            <summary>
+            Endpoint criado para listar todas as instituições cadastradas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.InstituicaoController.Put(System.Guid,webapi.event_.tarde.Domains.Instituicao)">
+            <summary>
+            Endpoint criado para atualizar instituição existente
+            </summary>
+            <param name="Id"></param>
+            <param name="instituicao"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.TipoEventoController.Post(webapi.event_.tarde.Domains.TipoEvento)">
+            <summary>
+            Endpoint criado para cadastrar novos tipos de eventos
+            </summary>
+            <param name="novoTipoEvento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.TipoEventoController.Delete(System.Guid)">
+            <summary>
+            Endpoint criado para deletar tipos de eventos
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.TipoEventoController.GetById(System.Guid)">
+            <summary>
+            Endpoint criado para buscar por id tipos de eventos
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.TipoEventoController.Get">
+            <summary>
+            Endpoint criado para listar todos tipos de eventos existentes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.TipoEventoController.Put(System.Guid,webapi.event_.tarde.Domains.TipoEvento)">
+            <summary>
+            Endpoint criado para atualizar tipo de evento existente
+            </summary>
+            <param name="Id"></param>
+            <param name="tipoEvento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.TipoUsuarioController.Post(webapi.event_.tarde.Domains.TipoUsuario)">
+            <summary>
+            Endpoint criado para cadastrar novo tipo de usuário
+            </summary>
+            <param name="tipoUsuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.TipoUsuarioController.Delete(System.Guid)">
+            <summary>
+            Endpoint criado para deletar tipo de usuário existente
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.TipoUsuarioController.GetById(System.Guid)">
+            <summary>
+            Endpoint criado para buscar tipo de usuário por id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.TipoUsuarioController.Get">
+            <summary>
+            Endpoint criado para listar todos tipos de usuários
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.TipoUsuarioController.Put(System.Guid,webapi.event_.tarde.Domains.TipoUsuario)">
+            <summary>
+            Endpoint criado para atualizar tipo de usuário existente
+            </summary>
+            <param name="Id"></param>
+            <param name="tipoUsuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.UsuarioController.Post(webapi.event_.tarde.Domains.Usuario)">
+            <summary>
+            Endpoint criado para cadastrar novo usuário
+            </summary>
+            <param name="usuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.UsuarioController.GetById(System.Guid)">
+            <summary>
+            Endpoint criado para buscar usuário po Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.UsuarioController.GetByEmailEndPassword(System.String,System.String)">
+            <summary>
+            Endpoint criado para buscar usuário por email e senha
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:webapi.event_.tarde.Migrations.BD">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.tarde.Migrations.BD.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.tarde.Migrations.BD.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.tarde.Migrations.BD.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -7,7 +7,7 @@ namespace webapi.event_.tarde.Domains
     public class TipoUsuario
     {
         [Key]
-        public Guid IdTTipoUsuario { get; set; } = Guid.NewGuid();
+        public Guid IdTipoUsuario { get; set; } = Guid.NewGuid();
 
         [Column(TypeName = "VARCHAR(100)")]
         [Required(ErrorMessage = "Titulo do tipo de evento obrigatório !")]

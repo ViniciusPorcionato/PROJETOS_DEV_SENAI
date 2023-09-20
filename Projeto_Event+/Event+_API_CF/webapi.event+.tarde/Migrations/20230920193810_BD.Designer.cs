@@ -12,8 +12,8 @@ using webapi.event_.tarde.Context;
 namespace webapi.event_.tarde.Migrations
 {
     [DbContext(typeof(EventContext))]
-    [Migration("20230918201807_BD_v1")]
-    partial class BD_v1
+    [Migration("20230920193810_BD")]
+    partial class BD
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -153,7 +153,7 @@ namespace webapi.event_.tarde.Migrations
 
             modelBuilder.Entity("webapi.event_.tarde.Domains.TipoUsuario", b =>
                 {
-                    b.Property<Guid>("IdTTipoUsuario")
+                    b.Property<Guid>("IdTipoUsuario")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -161,7 +161,7 @@ namespace webapi.event_.tarde.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
 
-                    b.HasKey("IdTTipoUsuario");
+                    b.HasKey("IdTipoUsuario");
 
                     b.ToTable("TipoUsuario");
                 });

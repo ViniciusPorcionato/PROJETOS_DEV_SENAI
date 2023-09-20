@@ -4,6 +4,8 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+	  <!--Comentários XML-->
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RootNamespace>webapi.event_.tarde</RootNamespace>
   </PropertyGroup>
 

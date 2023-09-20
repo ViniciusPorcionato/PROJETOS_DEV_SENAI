@@ -61,6 +61,7 @@ builder.Services.AddSwaggerGen(options =>
 
     //Configure o Swagger para usar o arquivo XML
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 
     //Usando a autenticação de segurança no Swagger
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()

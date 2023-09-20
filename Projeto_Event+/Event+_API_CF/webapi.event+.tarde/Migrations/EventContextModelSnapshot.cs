@@ -150,7 +150,7 @@ namespace webapi.event_.tarde.Migrations
 
             modelBuilder.Entity("webapi.event_.tarde.Domains.TipoUsuario", b =>
                 {
-                    b.Property<Guid>("IdTTipoUsuario")
+                    b.Property<Guid>("IdTipoUsuario")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -158,7 +158,7 @@ namespace webapi.event_.tarde.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
 
-                    b.HasKey("IdTTipoUsuario");
+                    b.HasKey("IdTipoUsuario");
 
                     b.ToTable("TipoUsuario");
                 });
