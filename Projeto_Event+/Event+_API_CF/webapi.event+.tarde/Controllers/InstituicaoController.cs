@@ -36,7 +36,6 @@ namespace webapi.event_.tarde.Controllers
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-                throw;
             }
         }
 
@@ -75,12 +74,11 @@ namespace webapi.event_.tarde.Controllers
                     return NotFound("Instituição Buscada não encontrada !");
                 }
 
-                return Ok();
+                return StatusCode(200, instituicaoBuscado);
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-                throw;
             }
         }
 
@@ -99,7 +97,6 @@ namespace webapi.event_.tarde.Controllers
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-                throw;
             }
         }
 
@@ -127,7 +124,6 @@ namespace webapi.event_.tarde.Controllers
                     catch (Exception e)
                     {
                         return BadRequest(e.Message);
-                        throw;
                     }
                 }
 

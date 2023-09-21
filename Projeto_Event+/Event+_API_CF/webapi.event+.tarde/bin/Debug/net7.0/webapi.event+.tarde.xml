@@ -4,6 +4,68 @@
         <name>webapi.event+.tarde</name>
     </assembly>
     <members>
+        <member name="M:webapi.event_.tarde.Controllers.ComentarioEventoController.Post(webapi.event_.tarde.Domains.ComentarioEvento)">
+            <summary>
+            Endpoint criado para cadastrar novo comentario
+            </summary>
+            <param name="comentarioEvento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.ComentarioEventoController.Delete(System.Guid)">
+            <summary>
+            Endpoint criado para deletar comentario existente
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.ComentarioEventoController.GetById(System.Guid)">
+            <summary>
+            Endpoint criado para buscar comentario por id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.ComentarioEventoController.Get">
+            <summary>
+            Endpoint criado para listar comentarios existentes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.EventoController.Post(webapi.event_.tarde.Domains.Evento)">
+            <summary>
+            Endpoint criado para cadastrar novo evento
+            </summary>
+            <param name="evento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.EventoController.Delete(System.Guid)">
+            <summary>
+            Endpoint criado para deletar evento existente
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.EventoController.GetById(System.Guid)">
+            <summary>
+            Endpoint criado para buscar evento por id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.EventoController.Get">
+            <summary>
+            Endpoint criado para listar eventos existentes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.EventoController.Put(System.Guid,webapi.event_.tarde.Domains.Evento)">
+            <summary>
+            Endpoint para atualizar evento existente pelo id
+            </summary>
+            <param name="Id"></param>
+            <param name="evento"></param>
+            <returns></returns>
+        </member>
         <member name="M:webapi.event_.tarde.Controllers.InstituicaoController.Post(webapi.event_.tarde.Domains.Instituicao)">
             <summary>
             Endpoint criado para cadastrar nova instituição
@@ -37,6 +99,55 @@
             </summary>
             <param name="Id"></param>
             <param name="instituicao"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.LoginController.Login(webapi.event_.tarde.ViewModels.LoginViewModel)">
+            <summary>
+            Endpoint criado para geração do token para fazer login do usuário
+            </summary>
+            <param name="usuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.PresencaEventoController.Put(System.Guid,webapi.event_.tarde.Domains.PresencaEvento)">
+            <summary>
+            Endpoint criado para atualizar presença de evento existente
+            </summary>
+            <param name="Id"></param>
+            <param name="presencaEvento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.PresencaEventoController.GetById(System.Guid)">
+            <summary>
+            Endpoint criado para buscar presença evento existente passando Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.PresencaEventoController.Delete(System.Guid)">
+            <summary>
+            Endpoint criado para deletar presença evento existente
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.PresencaEventoController.Post(webapi.event_.tarde.Domains.PresencaEvento)">
+            <summary>
+            Endpoint criado para se inscrever em um evento
+            </summary>
+            <param name="presencaEvento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.PresencaEventoController.Get">
+            <summary>
+            Endpoint criado para listar presencas de eventos existentes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.PresencaEventoController.GetByIdUser(System.Guid)">
+            <summary>
+            Endpoint criado para buscar presença evento pelo id do usuário
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:webapi.event_.tarde.Controllers.TipoEventoController.Post(webapi.event_.tarde.Domains.TipoEvento)">
