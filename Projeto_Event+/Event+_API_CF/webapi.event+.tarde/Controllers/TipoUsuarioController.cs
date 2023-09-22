@@ -9,7 +9,8 @@ namespace webapi.event_.tarde.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Produces("application/json")]  
+    [Produces("application/json")]
+    [Authorize(Roles = "Administrador")]//adm
     public class TipoUsuarioController : ControllerBase
     {
         private ITipoUsuarioRepository _tipoUsuarioRepository { get; set; }
@@ -30,7 +31,7 @@ namespace webapi.event_.tarde.Controllers
             try
             {
                 _tipoUsuarioRepository.Cadastrar(tipoUsuario);
-                return StatusCode(201);
+                return StatusCode(201, tipoUsuario);
             }
             catch (Exception e)
             {
@@ -70,15 +71,14 @@ namespace webapi.event_.tarde.Controllers
                 TipoUsuario tipoUsuarioBuscado = _tipoUsuarioRepository.BuscarPorId(id);
                 if (tipoUsuarioBuscado == null)
                 {
-                    return NotFound("Tipo de evento buscado não encontrada !");
+                    return NotFound("Tipo de usuário buscado não encontrada !");
                 }
 
-                return Ok();
+                return StatusCode(200, tipoUsuarioBuscado);
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-                throw;
             }
         }
 
@@ -97,7 +97,6 @@ namespace webapi.event_.tarde.Controllers
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-                throw;
             }
         }
 
@@ -125,7 +124,6 @@ namespace webapi.event_.tarde.Controllers
                     catch (Exception e)
                     {
                         return BadRequest(e.Message);
-                        throw;
                     }
                 }
 

@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using webapi.event_.tarde.Domains;
 using webapi.event_.tarde.Interfaces;
 using webapi.event_.tarde.Repositories;
@@ -10,6 +12,7 @@ namespace webapi.event_.tarde.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
+    [Authorize(Roles = "Administrador")]//adm
     public class InstituicaoController : ControllerBase
     {
         private IInstituicaoRepository _instituicaoRepository;
@@ -31,7 +34,7 @@ namespace webapi.event_.tarde.Controllers
             {
                 _instituicaoRepository.Cadastrar(novaInstituicao);
 
-                return Ok();
+                return StatusCode(201, novaInstituicao);
             }
             catch (Exception e)
             {
@@ -132,7 +135,6 @@ namespace webapi.event_.tarde.Controllers
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

@@ -43,11 +43,10 @@ namespace webapi.event_.tarde.Controllers
                     catch (Exception e)
                     {
                         return BadRequest(e.Message);
-                        throw;
                     }
                 }
 
-                return NotFound("Tipo de usuário não encontrado !");
+                return NotFound("Presença evento não encontrado !");
 
             }
             catch (Exception)
@@ -70,15 +69,14 @@ namespace webapi.event_.tarde.Controllers
                 PresencaEvento presencaEventoBuscado = _presencaEventoRepository.BuscarPorId(id);
                 if (presencaEventoBuscado == null)
                 {
-                    return NotFound("Tipo de evento buscado não encontrada !");
+                    return NotFound("Presença evento buscado não encontrada !");
                 }
 
-                return Ok();
+                return StatusCode(200, presencaEventoBuscado);
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-                throw;
             }
         }
 
@@ -136,7 +134,6 @@ namespace webapi.event_.tarde.Controllers
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-                throw;
             }
         }
 
@@ -154,7 +151,7 @@ namespace webapi.event_.tarde.Controllers
 
                 if (presencaEventoBuscado == null)
                 {
-                    return NotFound("O Genero buscado não foi encontrado !");
+                    return NotFound("Suas presenças buscada não foi encontrada !");
                 }
 
                 return StatusCode(200, presencaEventoBuscado);
@@ -163,7 +160,6 @@ namespace webapi.event_.tarde.Controllers
             catch (Exception erro)
             {
                 return BadRequest(erro.Message);
-                throw;
             }
 
         }

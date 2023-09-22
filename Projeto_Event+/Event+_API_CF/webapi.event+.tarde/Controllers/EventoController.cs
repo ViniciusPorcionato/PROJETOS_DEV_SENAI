@@ -30,7 +30,7 @@ namespace webapi.event_.tarde.Controllers
             {
                 _eventoRepository.Cadastrar(evento);
 
-                return StatusCode(201);
+                return StatusCode(201, evento);
             }
             catch (Exception e)
             {
@@ -70,15 +70,14 @@ namespace webapi.event_.tarde.Controllers
                 Evento eventoBuscado = _eventoRepository.BuscarPorId(id);
                 if (eventoBuscado == null)
                 {
-                    return NotFound("Tipo de evento buscado não encontrada !");
+                    return NotFound("Evento buscado não encontrada !");
                 }
 
-                return Ok();
+                return StatusCode(200, eventoBuscado);
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-                throw;
             }
         }
 
@@ -92,12 +91,12 @@ namespace webapi.event_.tarde.Controllers
             try
             {
                 List<Evento> listaEventos = _eventoRepository.Listar();
+
                 return StatusCode(200, listaEventos);
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-                throw;
             }
         }
 
@@ -125,11 +124,10 @@ namespace webapi.event_.tarde.Controllers
                     catch (Exception e)
                     {
                         return BadRequest(e.Message);
-                        throw;
                     }
                 }
 
-                return NotFound("Tipo de usuário não encontrado !");
+                return NotFound("Evento não encontrado !");
 
             }
             catch (Exception)

@@ -71,15 +71,14 @@ namespace webapi.event_.tarde.Controllers
                 ComentarioEvento comentarioEventoBuscado = _comentarioEventoRepository.BuscarPorId(id);
                 if (comentarioEventoBuscado == null)
                 {
-                    return NotFound("Tipo de evento buscado não encontrada !");
+                    return NotFound("Comentário de evento buscado não encontrada !");
                 }
 
-                return Ok();
+                return StatusCode(200, comentarioEventoBuscado);
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-                throw;
             }
         }
 
@@ -93,12 +92,12 @@ namespace webapi.event_.tarde.Controllers
             try
             {
                 List<ComentarioEvento> listaComentarios = _comentarioEventoRepository.Listar();
+
                 return StatusCode(200, listaComentarios);
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-                throw;
             }
         }
 

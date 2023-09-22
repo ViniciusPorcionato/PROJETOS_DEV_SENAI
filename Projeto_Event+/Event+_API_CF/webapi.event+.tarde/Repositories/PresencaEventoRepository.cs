@@ -103,7 +103,7 @@ namespace webapi.event_.tarde.Repositories
         {
             try
             {
-                return _eventContext.PresencaEvento.Select(p => new PresencaEvento
+                return _eventContext.PresencaEvento.Where(u => u.IdUsuario == id).Select(p => new PresencaEvento
                 {
                     IdPresencaEvento = p.IdPresencaEvento,
                     Situacao = p.Situacao,
@@ -119,7 +119,7 @@ namespace webapi.event_.tarde.Repositories
                         IdEvento = p.IdEvento,
                         NomeEvento = p.Evento!.NomeEvento,
                     }
-                }).Where(u => u.IdUsuario == id).ToList();
+                }).ToList();
             }
             catch (Exception)
             {

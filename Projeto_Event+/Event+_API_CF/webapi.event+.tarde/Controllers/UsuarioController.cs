@@ -30,7 +30,7 @@ namespace webapi.event_.tarde.Controllers
             {
                 _usuarioRepository.Cadastrar(usuario);
 
-                return StatusCode(201);
+                return StatusCode(201, usuario);
             }
             catch (Exception e)
             {
@@ -51,10 +51,10 @@ namespace webapi.event_.tarde.Controllers
                 Usuario usuarioBuscado = _usuarioRepository.BuscarPorId(id);
                 if (usuarioBuscado == null)
                 {
-                    return NotFound("Tipo de evento buscado não encontrada !");
+                    return NotFound("Usuário buscado não encontrado !");
                 }
 
-                return Ok();
+                return StatusCode(200, usuarioBuscado);
             }
             catch (Exception e)
             {
@@ -76,10 +76,10 @@ namespace webapi.event_.tarde.Controllers
                 Usuario usuarioBuscado = _usuarioRepository.BuscarPorEmailESenha(email, senha);
                 if (usuarioBuscado == null)
                 {
-                    return NotFound("Tipo de evento buscado não encontrada !");
+                    return NotFound("Usuário buscado não encontrado !");
                 }
 
-                return Ok();
+                return StatusCode(200, usuarioBuscado);
             }
             catch (Exception e)
             {
