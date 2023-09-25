@@ -29,7 +29,15 @@ namespace webapi.healthclinic.tarde.Domains
         [Required(ErrorMessage = "Endereço obrigatório !")]
         public string? Endereco { get; set; }
 
-        //terminar HorarioAbertura e HorarioFEchamento!!!
+        //terminar HorarioAbertura e HorarioFechamento!!!
+
+        [Column(TypeName = "TIME")]
+        [Required(ErrorMessage = "Horário Abertura obrigatório !")]
+        public TimeOnly? HorarioAbertuta { get; set; }
+
+        [Column(TypeName = "TIME")]
+        [Required(ErrorMessage = "Horário Fchamento obrigatório !")]
+        public TimeOnly? HorarioFechamento { get; set; }
 
     }
 }
