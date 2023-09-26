@@ -31,13 +31,13 @@ namespace webapi.healthclinic.tarde.Domains
 
         //terminar HorarioAbertura e HorarioFechamento!!!
 
-        [Column(TypeName = "TIME(7)")]
+        [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Horário Abertura obrigatório !")]
-        public TimeOnly? HorarioAbertuta { get; set; }
+        public TimeSpan? HorarioAbertuta { get; set; } = new TimeSpan(1);
 
         [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Horário Fchamento obrigatório !")]
-        public TimeOnly? HorarioFechamento { get; set; }
+        public TimeSpan? HorarioFechamento { get; set; } = new TimeSpan(1);
 
     }
 }
