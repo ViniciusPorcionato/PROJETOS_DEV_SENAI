@@ -17,9 +17,9 @@ namespace webapi.healthclinic.tarde.Domains
         
         //ref tabela clinica
         [Required(ErrorMessage = "A clinica é obrigatório !")]
-        public Guid IdCLinica { get; set; }
+        public Guid IdClinica { get; set; }
 
-        [ForeignKey(nameof(IdCLinica))]
+        [ForeignKey(nameof(IdClinica))]
         public Clinica? Clinica { get; set; }
 
         //ref tabela especialidade

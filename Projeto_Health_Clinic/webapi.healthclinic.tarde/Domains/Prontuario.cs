@@ -14,10 +14,16 @@ namespace webapi.healthclinic.tarde.Domains
         [Required(ErrorMessage = "Descrição obrigatório !")]
         public string? Descricao { get; set; }
 
-        [Required(ErrorMessage = "A clinica é obrigatório !")]
-        public Guid IdClinica { get; set; }
+        [Required(ErrorMessage = "A Consulta é obrigatório !")]
+        public Guid IdConsulta { get; set; }
 
-        [ForeignKey(nameof(IdClinica))]
-        public Clinica? Clinica { get; set; }
+        [ForeignKey(nameof(IdConsulta))]
+        public Consulta? Consulta { get; set; }
+
+        [Required(ErrorMessage = "O Médico é obrigatório !")]
+        public Guid IdMedico { get; set; }
+
+        [ForeignKey(nameof(IdMedico))]
+        public Medico? Medico { get; set; }
     }
 }
