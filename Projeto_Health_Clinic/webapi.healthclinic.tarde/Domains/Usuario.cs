@@ -26,7 +26,7 @@ namespace webapi.healthclinic.tarde.Domains
 
         [Column(TypeName = "DATE")]
         [Required(ErrorMessage = "Data nascimento obrigatório !")]
-        public DateOnly? DataNascimento { get; set; }
+        public DateTime DataNascimento { get; set; }
 
         [Required(ErrorMessage = "O tipo do usuário é obrigatório !")]
         public Guid IdTipoUsuario { get; set; }
