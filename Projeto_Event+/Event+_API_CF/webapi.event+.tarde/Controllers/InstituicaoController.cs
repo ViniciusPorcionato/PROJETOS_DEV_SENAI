@@ -15,7 +15,7 @@ namespace webapi.event_.tarde.Controllers
     [Authorize(Roles = "Administrador")]//adm
     public class InstituicaoController : ControllerBase
     {
-        private IInstituicaoRepository _instituicaoRepository;
+        private IInstituicaoRepository _instituicaoRepository { get; set; }
 
         public InstituicaoController()
         {

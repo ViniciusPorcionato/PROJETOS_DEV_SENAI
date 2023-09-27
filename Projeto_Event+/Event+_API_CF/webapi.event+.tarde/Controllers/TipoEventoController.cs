@@ -14,7 +14,7 @@ namespace webapi.event_.tarde.Controllers
     [Authorize(Roles = "Administrador")]//adm
     public class TipoEventoController : ControllerBase
     {
-        private ITipoEventoRepository _tipoEventoRepository;
+        private ITipoEventoRepository _tipoEventoRepository { get; set; }
 
         public TipoEventoController()
         {
