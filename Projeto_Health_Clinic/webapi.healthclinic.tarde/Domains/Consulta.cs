@@ -21,7 +21,7 @@ namespace webapi.healthclinic.tarde.Domains
 
         [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Hora consulta obrigatório !")]
-        public TimeSpan? HoraConsulta { get; set; } = new TimeSpan();
+        public TimeOnly HoraConsulta { get; set; }
 
 
         [Required(ErrorMessage = "O Médico é obrigatório !")]

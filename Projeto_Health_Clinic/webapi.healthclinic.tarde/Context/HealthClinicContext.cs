@@ -17,7 +17,7 @@ namespace webapi.healthclinic.tarde.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server= NOTE04-S15; Database= HealthClinic_tarde_cf; User Id = sa; Pwd= Senai@134; TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Server= NOTE04-S15; Database= HealthClinic_tarde_cf; User Id = sa; Pwd= Senai@134; TrustServerCertificate=True;", x => x.UseDateOnlyTimeOnly());
             base.OnConfiguring(optionsBuilder);
         }
 

@@ -37,11 +37,11 @@ namespace webapi.healthclinic.tarde.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(200)");
 
-                    b.Property<TimeSpan?>("HorarioAbertuta")
+                    b.Property<TimeOnly?>("HorarioAbertuta")
                         .IsRequired()
                         .HasColumnType("TIME");
 
-                    b.Property<TimeSpan?>("HorarioFechamento")
+                    b.Property<TimeOnly?>("HorarioFechamento")
                         .IsRequired()
                         .HasColumnType("TIME");
 
@@ -100,8 +100,7 @@ namespace webapi.healthclinic.tarde.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<TimeSpan?>("HoraConsulta")
-                        .IsRequired()
+                    b.Property<TimeOnly>("HoraConsulta")
                         .HasColumnType("TIME");
 
                     b.Property<Guid>("IdClinica")

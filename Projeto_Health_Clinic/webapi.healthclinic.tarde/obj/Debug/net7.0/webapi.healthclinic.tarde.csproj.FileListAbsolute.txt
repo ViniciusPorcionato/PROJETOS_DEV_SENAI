@@ -82,3 +82,5 @@ C:\Users\47423489824\Desktop\PROJETOS_DEV_SENAI\Projeto_Health_Clinic\webapi.hea
 C:\Users\47423489824\Desktop\PROJETOS_DEV_SENAI\Projeto_Health_Clinic\webapi.healthclinic.tarde\obj\Debug\net7.0\webapi.healthclinic.tarde.pdb
 C:\Users\47423489824\Desktop\PROJETOS_DEV_SENAI\Projeto_Health_Clinic\webapi.healthclinic.tarde\obj\Debug\net7.0\webapi.healthclinic.tarde.genruntimeconfig.cache
 C:\Users\47423489824\Desktop\PROJETOS_DEV_SENAI\Projeto_Health_Clinic\webapi.healthclinic.tarde\obj\Debug\net7.0\ref\webapi.healthclinic.tarde.dll
+C:\Users\47423489824\Desktop\PROJETOS_DEV_SENAI\Projeto_Health_Clinic\webapi.healthclinic.tarde\bin\Debug\net7.0\EntityFrameworkCore.SqlServer.DateOnlyTimeOnly.dll
+C:\Users\47423489824\Desktop\PROJETOS_DEV_SENAI\Projeto_Health_Clinic\webapi.healthclinic.tarde\obj\Debug\net7.0\EFCoreSqlServerDateOnlyTimeOnly.cs

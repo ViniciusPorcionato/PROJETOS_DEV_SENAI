@@ -20,8 +20,8 @@ namespace webapi.healthclinic.tarde.Migrations
                     RazaoSocial = table.Column<string>(type: "VARCHAR(150)", nullable: false),
                     CNPJ = table.Column<string>(type: "CHAR(14)", maxLength: 14, nullable: false),
                     Endereco = table.Column<string>(type: "VARCHAR(200)", nullable: false),
-                    HorarioAbertuta = table.Column<TimeSpan>(type: "TIME", nullable: false),
-                    HorarioFechamento = table.Column<TimeSpan>(type: "TIME", nullable: false)
+                    HorarioAbertuta = table.Column<TimeOnly>(type: "time", nullable: false),
+                    HorarioFechamento = table.Column<TimeOnly>(type: "time", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -60,7 +60,7 @@ namespace webapi.healthclinic.tarde.Migrations
                     Nome = table.Column<string>(type: "VARCHAR(150)", nullable: false),
                     Email = table.Column<string>(type: "VARCHAR(150)", nullable: false),
                     Senha = table.Column<string>(type: "CHAR(60)", maxLength: 60, nullable: false),
-                    DataNascimento = table.Column<DateTime>(type: "DATE", nullable: false),
+                    DataNascimento = table.Column<DateTime>(type: "date", nullable: false),
                     IdTipoUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
@@ -71,7 +71,7 @@ namespace webapi.healthclinic.tarde.Migrations
                         column: x => x.IdTipoUsuario,
                         principalTable: "TipoUsuario",
                         principalColumn: "IdTipoUsuario",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -92,19 +92,19 @@ namespace webapi.healthclinic.tarde.Migrations
                         column: x => x.IdClinica,
                         principalTable: "Clinica",
                         principalColumn: "IdClinica",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Medico_Especialidade_IdEspecialidade",
                         column: x => x.IdEspecialidade,
                         principalTable: "Especialidade",
                         principalColumn: "IdEspecialidade",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Medico_Usuario_IdUsuario",
                         column: x => x.IdUsuario,
                         principalTable: "Usuario",
                         principalColumn: "IdUsuario",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -126,7 +126,7 @@ namespace webapi.healthclinic.tarde.Migrations
                         column: x => x.IdUsuario,
                         principalTable: "Usuario",
                         principalColumn: "IdUsuario",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -135,8 +135,8 @@ namespace webapi.healthclinic.tarde.Migrations
                 {
                     IdConsulta = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Descricao = table.Column<string>(type: "TEXT", nullable: false),
-                    DataConsulta = table.Column<DateTime>(type: "DATE", nullable: false),
-                    HoraConsulta = table.Column<TimeSpan>(type: "TIME", nullable: false),
+                    DataConsulta = table.Column<DateTime>(type: "date", nullable: false),
+                    HoraConsulta = table.Column<TimeOnly>(type: "time", nullable: false),
                     IdMedico = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IdPaciente = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IdClinica = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
@@ -149,7 +149,7 @@ namespace webapi.healthclinic.tarde.Migrations
                         column: x => x.IdClinica,
                         principalTable: "Clinica",
                         principalColumn: "IdClinica",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Consulta_Medico_IdMedico",
                         column: x => x.IdMedico,
@@ -181,13 +181,13 @@ namespace webapi.healthclinic.tarde.Migrations
                         column: x => x.IdConsulta,
                         principalTable: "Consulta",
                         principalColumn: "IdConsulta",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Comentario_Paciente_IdPaciente",
                         column: x => x.IdPaciente,
                         principalTable: "Paciente",
                         principalColumn: "IdPaciente",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -207,7 +207,7 @@ namespace webapi.healthclinic.tarde.Migrations
                         column: x => x.IdConsulta,
                         principalTable: "Consulta",
                         principalColumn: "IdConsulta",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Prontuario_Medico_IdMedico",
                         column: x => x.IdMedico,
