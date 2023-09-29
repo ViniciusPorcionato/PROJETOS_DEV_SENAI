@@ -18,6 +18,11 @@ namespace webapi.healthclinic.tarde.Controllers
             _clinicaRepository = new ClinicaRepository();
         }
 
+        /// <summary>
+        /// Endpoint criado para cadastrar uma nova clinica
+        /// </summary>
+        /// <param name="novaClinica"></param>
+        /// <returns></returns>
         [HttpPost("Cadastrar")]
         public IActionResult Post(Clinica novaClinica)
         {
@@ -33,6 +38,11 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint criado para deletar uma clinica existente
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("Deletar/{id}")]
         public IActionResult Delete(Guid id)
         {
@@ -47,7 +57,13 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
-        [HttpPut("Atualizar/{id}")]
+        /// <summary>
+        /// Endpoint criado para atualizar uma clinica existente
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <param name="clinica"></param>
+        /// <returns></returns>
+        [HttpPut("Atualizar")]
         public IActionResult Put(Guid Id, Clinica clinica)
         {
             try
@@ -77,6 +93,10 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint criado para listar todas as clinicas existentes
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("Listar")]
         public IActionResult Get()
         {
@@ -91,6 +111,11 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint criado para buscar clinica existente pelo ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("BuscarPorId/{id}")]
         public IActionResult GetById(Guid id)
         {

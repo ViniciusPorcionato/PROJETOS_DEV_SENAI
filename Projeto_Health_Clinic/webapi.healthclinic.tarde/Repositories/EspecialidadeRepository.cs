@@ -14,16 +14,17 @@ namespace webapi.healthclinic.tarde.Repositories
         }
         public void Atualizar(Guid id, Especialidade especialidade)
         {
-            Especialidade especialidadeBuscada = _healthClinicContext.Especialidade.Find(id)!;
+            Especialidade especialidadeBuscada = BuscarPorId(id)!;
 
             if (especialidadeBuscada != null)
             {
                 especialidadeBuscada.TituloEspecialidade = especialidade.TituloEspecialidade;
 
+                _healthClinicContext.Especialidade.Update(especialidadeBuscada!);
+                _healthClinicContext.SaveChanges();
+
             }
 
-            _healthClinicContext.Especialidade.Update(especialidadeBuscada!);
-            _healthClinicContext.SaveChanges();
         }
 
         public Especialidade BuscarPorId(Guid id)

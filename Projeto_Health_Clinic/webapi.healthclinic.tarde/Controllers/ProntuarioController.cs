@@ -18,6 +18,11 @@ namespace webapi.healthclinic.tarde.Controllers
             _prontuarioRepository = new ProntuarioRepository();
         }
 
+        /// <summary>
+        /// Endpoint criado para cadastrar um novo prontuário
+        /// </summary>
+        /// <param name="novoProntuario"></param>
+        /// <returns></returns>
         [HttpPost("Cadastrar")]
         public IActionResult Post(Prontuario novoProntuario)
         {
@@ -33,6 +38,11 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint criado para deletar um prontuario existente
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("Deletar/{id}")]
         public IActionResult Delete(Guid id)
         {
@@ -47,6 +57,12 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint criado para atualizar prontuario existente
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <param name="prontuario"></param>
+        /// <returns></returns>
         [HttpPut("Atualizar/{id}")]
         public IActionResult Put(Guid Id, Prontuario prontuario)
         {
@@ -77,6 +93,10 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint criado para listar prontuarios
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("Listar")]
         public IActionResult Get()
         {
@@ -91,6 +111,11 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint criado para buscar prontuario por ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("BuscarPorId/{id}")]
         public IActionResult GetById(Guid id)
         {

@@ -22,6 +22,11 @@ namespace webapi.healthclinic.tarde.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
+        /// <summary>
+        /// Endpoint criado para efetuar login e gerar token
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Login(LoginViewModel usuario)
         {

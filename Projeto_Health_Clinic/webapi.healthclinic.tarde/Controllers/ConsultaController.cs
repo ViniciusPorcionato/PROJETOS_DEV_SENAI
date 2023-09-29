@@ -18,6 +18,11 @@ namespace webapi.healthclinic.tarde.Controllers
             _consultaRepository = new ConsultaRepository();
         }
 
+        /// <summary>
+        /// Endpoint criado para cadastrar uma nova consulta
+        /// </summary>
+        /// <param name="novaConsulta"></param>
+        /// <returns></returns>
         [HttpPost("Cadastrar")]
         public IActionResult Post(Consulta novaConsulta)
         {
@@ -33,6 +38,11 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint criado para deletar consulta existente
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("Deletar/{id}")]
         public IActionResult Delete(Guid id)
         {
@@ -47,6 +57,12 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint criado para atualizar consulta existente
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <param name="consulta"></param>
+        /// <returns></returns>
         [HttpPut("Atualizar/{id}")]
         public IActionResult Put(Guid Id, Consulta consulta)
         {
@@ -77,6 +93,11 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint criado para buscar consulta pelo ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("BuscarPorId/{id}")]
         public IActionResult GetById(Guid id)
         {
@@ -96,6 +117,11 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint criado para listar consultas de um médico
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("PresencaPorIdMedico/{id}")]
         public IActionResult GetByIdDoctor(Guid id)
         {
@@ -118,6 +144,11 @@ namespace webapi.healthclinic.tarde.Controllers
 
         }
 
+        /// <summary>
+        /// Endpoint criado para listar consultas de um paciente
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("PresencaPorIdPaciente/{id}")]
         public IActionResult GetByIdPatient(Guid id)
         {

@@ -18,6 +18,11 @@ namespace webapi.healthclinic.tarde.Controllers
             _medicoRepository = new MedicoRepository();
         }
 
+        /// <summary>
+        /// Endpoint criado para cadastrar novo medico
+        /// </summary>
+        /// <param name="novoMedico"></param>
+        /// <returns></returns>
         [HttpPost("Cadastrar")]
         public IActionResult Post(Medico novoMedico)
         {
@@ -33,7 +38,11 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Endpoint criado para deletar medico existente
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("Deletar/{id}")]
         public IActionResult Delete(Guid id)
         {
@@ -48,6 +57,12 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint criado para atualizar medico existente
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <param name="medico"></param>
+        /// <returns></returns>
         [HttpPut("Atualizar/{id}")]
         public IActionResult Put(Guid Id, Medico medico)
         {
@@ -78,6 +93,11 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint criado para buscar médico pelo ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("BuscarPorId/{id}")]
         public IActionResult GetById(Guid id)
         {

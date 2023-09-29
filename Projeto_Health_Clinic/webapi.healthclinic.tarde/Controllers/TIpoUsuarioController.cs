@@ -18,7 +18,11 @@ namespace webapi.healthclinic.tarde.Controllers
             _tipoUsuarioRepository = new TipoUsuarioRepository();
         }
 
-
+        /// <summary>
+        /// Endpoint criado para cadastrar um novo tipo de usuario
+        /// </summary>
+        /// <param name="tipoUsuario"></param>
+        /// <returns></returns>
         [HttpPost("Cadastrar")]
         public IActionResult Post(TipoUsuario tipoUsuario)
         {
@@ -33,6 +37,11 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint criado para deletar tipo de usuario existente
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("Deletar/{id}")]
         public IActionResult Delete(Guid id)
         {

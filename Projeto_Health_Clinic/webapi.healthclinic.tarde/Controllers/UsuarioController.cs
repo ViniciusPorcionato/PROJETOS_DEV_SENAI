@@ -18,7 +18,11 @@ namespace webapi.healthclinic.tarde.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
-
+        /// <summary>
+        /// Endpoint criado para cadastrar um novo usuario
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         [HttpPost("CadastrarUsuario")]
         public IActionResult Post(Usuario usuario)
         {
@@ -34,6 +38,11 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint criado para buscar usuario pelo ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("BuscarPorId/{id}")]
         public IActionResult GetById(Guid id)
         {
@@ -54,6 +63,12 @@ namespace webapi.healthclinic.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint criado para buscar usuario pelo email e senha
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="senha"></param>
+        /// <returns></returns>
         [HttpGet("BuscarPorEmailESenha")]
         public IActionResult GetByEmailEndPassword(string email, string senha)
         {
