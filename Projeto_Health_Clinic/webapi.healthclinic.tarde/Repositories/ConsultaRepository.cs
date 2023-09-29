@@ -75,5 +75,87 @@ namespace webapi.healthclinic.tarde.Repositories
                 throw;
             }
         }
+
+        public List<Consulta> ListarConsultasMedico(Guid id)
+        {
+            try
+            {
+                return _healthClinicContext.Consulta.Where(u => u.IdMedico == id).Select(m => new Consulta
+                {
+                    IdConsulta = m.IdConsulta,
+                    Descricao = m.Descricao,
+                    DataConsulta = m.DataConsulta,
+                    HoraConsulta = m.HoraConsulta,
+
+
+                    Medico = new Medico
+                    {
+                        IdMedico = m.IdMedico,
+                        CRM = m.Medico!.CRM,
+                    },
+
+                    Paciente = new Paciente
+                    {
+                        IdPaciente = m.IdPaciente,
+                        RG = m.Paciente!.RG,
+                        
+                    },
+
+                    Clinica = new Clinica
+                    {
+                        IdClinica = m.IdClinica,
+                        NomeFantasia = m.Clinica!.NomeFantasia,
+                        Endereco = m.Clinica!.Endereco,
+
+                    }
+                }).ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            };
+        }
+
+        public List<Consulta> ListarConsultasPaciente(Guid id)
+        {
+            try
+            {
+                return _healthClinicContext.Consulta.Where(u => u.IdPaciente == id).Select(m => new Consulta
+                {
+                    IdConsulta = m.IdConsulta,
+                    Descricao = m.Descricao,
+                    DataConsulta = m.DataConsulta,
+                    HoraConsulta = m.HoraConsulta,
+
+
+                    Medico = new Medico
+                    {
+                        IdMedico = m.IdMedico,
+                        CRM = m.Medico!.CRM,
+                    },
+
+                    Paciente = new Paciente
+                    {
+                        IdPaciente = m.IdPaciente,
+                        RG = m.Paciente!.RG,
+
+                    },
+
+                    Clinica = new Clinica
+                    {
+                        IdClinica = m.IdClinica,
+                        NomeFantasia = m.Clinica!.NomeFantasia,
+                        Endereco = m.Clinica!.Endereco,
+
+                    }
+                }).ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            };
+        }
     }
 }

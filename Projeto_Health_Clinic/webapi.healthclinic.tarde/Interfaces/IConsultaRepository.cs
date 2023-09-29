@@ -8,5 +8,9 @@ namespace webapi.healthclinic.tarde.Interfaces
         void Deletar(Guid id);
         void Atualizar(Guid id, Consulta consulta);
         Consulta BuscarPorId(Guid id);
+        List<Consulta> ListarConsultasMedico(Guid id);
+        List<Consulta> ListarConsultasPaciente(Guid id);
+
+
     }
 }

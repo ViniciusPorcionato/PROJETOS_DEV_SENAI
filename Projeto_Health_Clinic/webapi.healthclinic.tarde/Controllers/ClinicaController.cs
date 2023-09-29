@@ -99,7 +99,7 @@ namespace webapi.healthclinic.tarde.Controllers
                 Clinica clinicaBuscada = _clinicaRepository.BuscarPorId(id);
                 if (clinicaBuscada == null)
                 {
-                    return NotFound("CLinica Buscada não encontrada !");
+                    return NotFound("Clinica Buscada não encontrada !");
                 }
 
                 return StatusCode(200, clinicaBuscada);
