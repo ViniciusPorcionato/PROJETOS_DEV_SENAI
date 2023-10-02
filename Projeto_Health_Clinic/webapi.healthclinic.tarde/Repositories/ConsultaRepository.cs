@@ -92,12 +92,20 @@ namespace webapi.healthclinic.tarde.Repositories
                     {
                         IdMedico = m.IdMedico,
                         CRM = m.Medico!.CRM,
+                        Usuario = new Usuario 
+                        { 
+                            Nome = m.Medico.Usuario!.Nome
+                        }
                     },
 
                     Paciente = new Paciente
                     {
                         IdPaciente = m.IdPaciente,
                         RG = m.Paciente!.RG,
+                        Usuario = new Usuario
+                        {
+                            Nome = m.Paciente.Usuario!.Nome
+                        }
                         
                     },
 
@@ -133,12 +141,20 @@ namespace webapi.healthclinic.tarde.Repositories
                     {
                         IdMedico = m.IdMedico,
                         CRM = m.Medico!.CRM,
+                        Usuario = new Usuario
+                        {
+                            Nome = m.Medico.Usuario!.Nome
+                        }
                     },
 
                     Paciente = new Paciente
                     {
                         IdPaciente = m.IdPaciente,
                         RG = m.Paciente!.RG,
+                        Usuario = new Usuario
+                        {
+                            Nome = m.Paciente.Usuario!.Nome
+                        }
 
                     },
 
@@ -147,6 +163,7 @@ namespace webapi.healthclinic.tarde.Repositories
                         IdClinica = m.IdClinica,
                         NomeFantasia = m.Clinica!.NomeFantasia,
                         Endereco = m.Clinica!.Endereco,
+
 
                     }
                 }).ToList();

@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using webapi.healthclinic.tarde.Domains;
 using webapi.healthclinic.tarde.Interfaces;
 using webapi.healthclinic.tarde.Repositories;
@@ -9,6 +11,7 @@ namespace webapi.healthclinic.tarde.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
+    [Authorize(Roles = "Administrador")]
     public class EspecialidadeController : ControllerBase
     {
         private IEspecialidadeRepository _especialidadeRepository { get; set; }

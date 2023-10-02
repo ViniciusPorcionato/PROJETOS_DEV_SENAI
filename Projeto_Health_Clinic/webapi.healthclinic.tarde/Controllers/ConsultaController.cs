@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using webapi.healthclinic.tarde.Domains;
 using webapi.healthclinic.tarde.Interfaces;
 using webapi.healthclinic.tarde.Repositories;
@@ -24,6 +26,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// <param name="novaConsulta"></param>
         /// <returns></returns>
         [HttpPost("Cadastrar")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Post(Consulta novaConsulta)
         {
             try
@@ -44,6 +47,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete("Deletar/{id}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Delete(Guid id)
         {
             try
@@ -64,6 +68,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// <param name="consulta"></param>
         /// <returns></returns>
         [HttpPut("Atualizar/{id}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Put(Guid Id, Consulta consulta)
         {
             try
@@ -99,6 +104,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("BuscarPorId/{id}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult GetById(Guid id)
         {
             try
@@ -123,6 +129,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("PresencaPorIdMedico/{id}")]
+        [Authorize(Roles = "Medico")]
         public IActionResult GetByIdDoctor(Guid id)
         {
             try
@@ -150,6 +157,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("PresencaPorIdPaciente/{id}")]
+        [Authorize(Roles = "Paciente")]
         public IActionResult GetByIdPatient(Guid id)
         {
             try

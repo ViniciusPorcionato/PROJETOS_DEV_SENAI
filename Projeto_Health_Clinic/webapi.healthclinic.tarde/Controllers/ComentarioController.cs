@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using webapi.healthclinic.tarde.Domains;
 using webapi.healthclinic.tarde.Interfaces;
 using webapi.healthclinic.tarde.Repositories;
@@ -24,6 +26,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// <param name="novoComentario"></param>
         /// <returns></returns>
         [HttpPost("Cadastrar")]
+        [Authorize(Roles = "Paciente")]
         public IActionResult Post(Comentario novoComentario)
         {
             try
@@ -44,6 +47,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete("Deletar/{id}")]
+        [Authorize(Roles = "Paciente")]
         public IActionResult Delete(Guid id)
         {
             try
@@ -65,6 +69,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// <param name="comentario"></param>
         /// <returns></returns>
         [HttpPut("Atualizar/{id}")]
+        [Authorize(Roles = "Paciente")]
         public IActionResult Put(Guid Id, Comentario comentario)
         {
             try
@@ -99,6 +104,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("Listar")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Get()
         {
             try
@@ -118,6 +124,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("BuscarPorId/{id}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult GetById(Guid id)
         {
             try

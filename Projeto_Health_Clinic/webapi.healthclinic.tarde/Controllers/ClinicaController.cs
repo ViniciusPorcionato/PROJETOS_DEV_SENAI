@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using webapi.healthclinic.tarde.Domains;
 using webapi.healthclinic.tarde.Interfaces;
 using webapi.healthclinic.tarde.Repositories;
@@ -9,6 +11,7 @@ namespace webapi.healthclinic.tarde.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
+    
     public class ClinicaController : ControllerBase
     {
         private IClinicaRepository _clinicaRepository { get; set; }
@@ -24,6 +27,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// <param name="novaClinica"></param>
         /// <returns></returns>
         [HttpPost("Cadastrar")]
+        [Authorize(Roles = "Administrador")]//adm
         public IActionResult Post(Clinica novaClinica)
         {
             try
@@ -44,6 +48,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete("Deletar/{id}")]
+        [Authorize(Roles = "Administrador")]//adm
         public IActionResult Delete(Guid id)
         {
             try
@@ -64,6 +69,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// <param name="clinica"></param>
         /// <returns></returns>
         [HttpPut("Atualizar")]
+        [Authorize(Roles = "Administrador")]//adm
         public IActionResult Put(Guid Id, Clinica clinica)
         {
             try
@@ -98,6 +104,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("Listar")]
+        [Authorize(Roles = "Paciente")]
         public IActionResult Get()
         {
             try
@@ -117,6 +124,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("BuscarPorId/{id}")]
+        [Authorize(Roles = "Administrador")]//adm
         public IActionResult GetById(Guid id)
         {
             try
