@@ -80,40 +80,40 @@ namespace webapi.healthclinic.tarde.Repositories
         {
             try
             {
-                return _healthClinicContext.Consulta.Where(u => u.IdMedico == id).Select(m => new Consulta
+                return _healthClinicContext.Consulta.Where(u => u.IdMedico == id).Select(c => new Consulta
                 {
-                    IdConsulta = m.IdConsulta,
-                    Descricao = m.Descricao,
-                    DataConsulta = m.DataConsulta,
-                    HoraConsulta = m.HoraConsulta,
+                    IdConsulta = c.IdConsulta,
+                    Descricao = c.Descricao,
+                    DataConsulta = c.DataConsulta,
+                    HoraConsulta = c.HoraConsulta,
 
 
                     Medico = new Medico
                     {
-                        IdMedico = m.IdMedico,
-                        CRM = m.Medico!.CRM,
+                        IdMedico = c.IdMedico,
+                        CRM = c.Medico!.CRM,
                         Usuario = new Usuario 
                         { 
-                            Nome = m.Medico.Usuario!.Nome
+                            Nome = c.Medico.Usuario!.Nome
                         }
                     },
 
                     Paciente = new Paciente
                     {
-                        IdPaciente = m.IdPaciente,
-                        RG = m.Paciente!.RG,
+                        IdPaciente = c.IdPaciente,
+                        RG = c.Paciente!.RG,
                         Usuario = new Usuario
                         {
-                            Nome = m.Paciente.Usuario!.Nome
+                            Nome = c.Paciente.Usuario!.Nome
                         }
                         
                     },
 
                     Clinica = new Clinica
                     {
-                        IdClinica = m.IdClinica,
-                        NomeFantasia = m.Clinica!.NomeFantasia,
-                        Endereco = m.Clinica!.Endereco,
+                        IdClinica = c.IdClinica,
+                        NomeFantasia = c.Clinica!.NomeFantasia,
+                        Endereco = c.Clinica!.Endereco,
 
                     }
                 }).ToList();
@@ -129,40 +129,40 @@ namespace webapi.healthclinic.tarde.Repositories
         {
             try
             {
-                return _healthClinicContext.Consulta.Where(u => u.IdPaciente == id).Select(m => new Consulta
+                return _healthClinicContext.Consulta.Where(u => u.IdPaciente == id).Select(c => new Consulta
                 {
-                    IdConsulta = m.IdConsulta,
-                    Descricao = m.Descricao,
-                    DataConsulta = m.DataConsulta,
-                    HoraConsulta = m.HoraConsulta,
+                    IdConsulta = c.IdConsulta,
+                    Descricao = c.Descricao,
+                    DataConsulta = c.DataConsulta,
+                    HoraConsulta = c.HoraConsulta,
 
 
                     Medico = new Medico
                     {
-                        IdMedico = m.IdMedico,
-                        CRM = m.Medico!.CRM,
+                        IdMedico = c.IdMedico,
+                        CRM = c.Medico!.CRM,
                         Usuario = new Usuario
                         {
-                            Nome = m.Medico.Usuario!.Nome
+                            Nome = c.Medico.Usuario!.Nome
                         }
                     },
 
                     Paciente = new Paciente
                     {
-                        IdPaciente = m.IdPaciente,
-                        RG = m.Paciente!.RG,
+                        IdPaciente = c.IdPaciente,
+                        RG = c.Paciente!.RG,
                         Usuario = new Usuario
                         {
-                            Nome = m.Paciente.Usuario!.Nome
+                            Nome = c.Paciente.Usuario!.Nome
                         }
 
                     },
 
                     Clinica = new Clinica
                     {
-                        IdClinica = m.IdClinica,
-                        NomeFantasia = m.Clinica!.NomeFantasia,
-                        Endereco = m.Clinica!.Endereco,
+                        IdClinica = c.IdClinica,
+                        NomeFantasia = c.Clinica!.NomeFantasia,
+                        Endereco = c.Clinica!.Endereco,
 
 
                     }
