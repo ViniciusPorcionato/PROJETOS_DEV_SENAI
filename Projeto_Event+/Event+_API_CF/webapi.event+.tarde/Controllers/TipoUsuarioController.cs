@@ -59,30 +59,6 @@ namespace webapi.event_.tarde.Controllers
         }
 
         /// <summary>
-        /// Endpoint criado para buscar tipo de usuário por id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpGet("BuscarPorId/{id}")]
-        public IActionResult GetById(Guid id)
-        {
-            try
-            {
-                TipoUsuario tipoUsuarioBuscado = _tipoUsuarioRepository.BuscarPorId(id);
-                if (tipoUsuarioBuscado == null)
-                {
-                    return NotFound("Tipo de usuário buscado não encontrada !");
-                }
-
-                return StatusCode(200, tipoUsuarioBuscado);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
-
-        /// <summary>
         /// Endpoint criado para listar todos tipos de usuários
         /// </summary>
         /// <returns></returns>
@@ -100,41 +76,5 @@ namespace webapi.event_.tarde.Controllers
             }
         }
 
-        /// <summary>
-        /// Endpoint criado para atualizar tipo de usuário existente
-        /// </summary>
-        /// <param name="Id"></param>
-        /// <param name="tipoUsuario"></param>
-        /// <returns></returns>
-        [HttpPut("Atualizar/{id}")]
-        public IActionResult Put(Guid Id, TipoUsuario tipoUsuario)
-        {
-            try
-            {
-                TipoUsuario tipoUsuarioBuscado = _tipoUsuarioRepository.BuscarPorId(tipoUsuario.IdTipoUsuario);
-
-                if (tipoUsuarioBuscado != null)
-                {
-                    try
-                    {
-                        _tipoUsuarioRepository.Atualizar(Id, tipoUsuario);
-
-                        return StatusCode(200);
-                    }
-                    catch (Exception e)
-                    {
-                        return BadRequest(e.Message);
-                    }
-                }
-
-                return NotFound("Tipo de usuário não encontrado !");
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
     }
 }

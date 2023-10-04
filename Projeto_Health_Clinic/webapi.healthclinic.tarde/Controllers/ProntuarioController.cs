@@ -67,7 +67,7 @@ namespace webapi.healthclinic.tarde.Controllers
         /// <param name="Id"></param>
         /// <param name="prontuario"></param>
         /// <returns></returns>
-        [HttpPut("Atualizar/{id}")]
+        [HttpPut("Atualizar")]
         [Authorize(Roles = "Medico")]
         public IActionResult Put(Guid Id, Prontuario prontuario)
         {

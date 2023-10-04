@@ -35,10 +35,6 @@ namespace webapi.event_.tarde.Repositories
             }
         }
 
-        public TipoUsuario BuscarPorId(Guid id)
-        {
-            return _eventContext.TipoUsuario.FirstOrDefault(e => e.IdTipoUsuario == id)!;
-        }
 
         public void Cadastrar(TipoUsuario tipoUsuario)
         {

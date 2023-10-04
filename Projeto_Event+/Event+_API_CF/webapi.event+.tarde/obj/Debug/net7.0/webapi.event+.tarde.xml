@@ -199,25 +199,10 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:webapi.event_.tarde.Controllers.TipoUsuarioController.GetById(System.Guid)">
-            <summary>
-            Endpoint criado para buscar tipo de usuário por id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
         <member name="M:webapi.event_.tarde.Controllers.TipoUsuarioController.Get">
             <summary>
             Endpoint criado para listar todos tipos de usuários
             </summary>
-            <returns></returns>
-        </member>
-        <member name="M:webapi.event_.tarde.Controllers.TipoUsuarioController.Put(System.Guid,webapi.event_.tarde.Domains.TipoUsuario)">
-            <summary>
-            Endpoint criado para atualizar tipo de usuário existente
-            </summary>
-            <param name="Id"></param>
-            <param name="tipoUsuario"></param>
             <returns></returns>
         </member>
         <member name="M:webapi.event_.tarde.Controllers.UsuarioController.Post(webapi.event_.tarde.Domains.Usuario)">
