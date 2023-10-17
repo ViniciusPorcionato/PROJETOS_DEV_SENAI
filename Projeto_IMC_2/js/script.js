@@ -1,4 +1,5 @@
-
+//lista global
+const listaPessoas = [];
 
 function calcular(e) {
     //interrompe/captura o evento disparado
@@ -17,17 +18,24 @@ function calcular(e) {
     }
 
     const imc = calcularIMC(peso, altura)
-    const situacao = geraSituacao(imc);
+    const txtsituacao = geraSituacao(imc);
+    let now = new Date();
 
+    //object short sintaxe
     const pessoa = {
-        nome : nome,
-        altura : altura,
-        peso : peso,
-        imc : imc,
-        situacao : situacao
+        nome,
+        //propriedade : valor
+        altura: altura,
+        peso,
+        imc,
+        situacao: txtsituacao,
+        dataCadastro: `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()} ${now.getHours()}:${now.getMinutes()}`,
     }
 
-    console.log(pessoa);
+    listaPessoas.push(pessoa);
+
+    exibirDados();
+
 }
 
 
@@ -39,19 +47,42 @@ function geraSituacao(imc) {
     if (imc < 18.5) {
         return "Magreza Severa";
     }
-    else if (imc <= 24.99 ) {
+    else if (imc <= 24.99) {
         return "Peso Normal";
     }
-    else if (imc <= 29.99 ) {
+    else if (imc <= 29.99) {
         return "Acima do Peso";
     }
-    else if (imc <= 34.99 ) {
+    else if (imc <= 34.99) {
         return "Obesidade I";
     }
-    else if (imc <= 39.99 ) {
+    else if (imc <= 39.99) {
         return "Obesidade II";
     }
-    else{
+    else {
         return "Cuidado !!"
     }
 }//fim da função
+
+function exibirDados() {
+
+    console.log(listaPessoas);
+    let linhas = "";
+
+    listaPessoas.forEach(function (oPessoa) {
+        //linhas de tabela
+        linhas += `
+    <tr>
+         <td data-cell="nome">${oPessoa.nome}</td>
+         <td data-cell="altura">${oPessoa.altura}</td>
+         <td data-cell="peso">${oPessoa.peso}</td>
+         <td data-cell="valor do IMC">${oPessoa.imc}</td>
+         <td data-cell="classificação do IMC">${oPessoa.situacao}</td>
+         <td data-cell="data de cadastro">${oPessoa.dataCadastro}</td>
+    </tr>
+    `;
+    });
+
+    //inserir as linhas de tabela no html
+    document.getElementById("corpo-tabela").innerHTML = linhas;
+}
