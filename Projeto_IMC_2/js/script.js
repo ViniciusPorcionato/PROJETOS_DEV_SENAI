@@ -36,8 +36,11 @@ function calcular(e) {
 
     exibirDados();
 
-}
+    limparDados();
 
+    deletarRegistros();
+
+}
 
 function calcularIMC(peso, altura) {
     return peso / Math.pow(altura, 2);
@@ -76,7 +79,7 @@ function exibirDados() {
          <td data-cell="nome">${oPessoa.nome}</td>
          <td data-cell="altura">${oPessoa.altura}</td>
          <td data-cell="peso">${oPessoa.peso}</td>
-         <td data-cell="valor do IMC">${oPessoa.imc}</td>
+         <td data-cell="valor do IMC">${oPessoa.imc.toFixed(2)}</td>
          <td data-cell="classificação do IMC">${oPessoa.situacao}</td>
          <td data-cell="data de cadastro">${oPessoa.dataCadastro}</td>
     </tr>
@@ -85,4 +88,15 @@ function exibirDados() {
 
     //inserir as linhas de tabela no html
     document.getElementById("corpo-tabela").innerHTML = linhas;
+}
+
+function limparDados() {
+        //limpar dados
+        document.getElementById("nome").value = "";
+        document.getElementById("altura").value = "";
+        document.getElementById("peso").value = "";
+}
+
+function deletarRegistros() {
+    
 }
