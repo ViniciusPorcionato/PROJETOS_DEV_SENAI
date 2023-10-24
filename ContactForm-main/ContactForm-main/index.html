@@ -8,7 +8,6 @@
     <title>Contact Form JS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css ">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./JS/scripts.js">
 </head>
 
 <body>
@@ -24,7 +23,7 @@
         <h1 class="titulo">Contact form</h1>
         <p class="descricao">Insira os dados do contato e clique em cadastrar!</p>
 
-        <form action="" class="formulario-contato">
+        <form onsubmit="cadastrar(event)" action="" class="formulario-contato">
             <div class="linha">
                 <div class="rotulos">
                     <label for="nome">Nome</label>
@@ -61,7 +60,7 @@
                     <label for="pais">Endereço</label>
                 </div>
                 <div class="entradas">
-                    <input type="number" id="cep" class="entrada entrada--quarto" placeholder="cep: 9999-999" maxlength="8">
+                    <input onblur="chamaApi()" autocomplete="on" type="number" id="cep" class="entrada entrada--quarto" placeholder="cep: 9999-999" maxlength="8" >
                     <input type="text" id="rua" class="entrada entrada--metade" placeholder="Rua Lá de Casa">
                     <input type="text" id="numero" class="entrada entrada--quarto" placeholder="ex: 555">
                     <input type="text" id="complemento" class="entrada entrada--terco" placeholder="Apto. 12 Bloco X">
@@ -76,13 +75,13 @@
                     <label for="pais">Anotações</label>
                 </div>
                 <div class="entradas">
-                    <textarea class="entrada anotacoes" name="anotacoes" id="" placeholder="Suas anotações aqui"></textarea>
+                    <textarea class="entrada anotacoes" name="anotacoes" id="anotacoes" placeholder="Suas anotações aqui"></textarea>
                 </div>
             </div>
 
             <div class="linha box-botoes">
-                <button type="button" class="btn cadastrar">Cadastrar</button>
-                <button type="button" class="btn limpar">Limpar</button>
+                <button type="submit" class="btn cadastrar">Cadastrar</button>
+                <button type="submit" class="btn limpar">Limpar</button>
             </div>
         </form>
         <section class="cadastros">
@@ -90,6 +89,8 @@
 
             </article>
         </section>
+
+        <script type="text/javascript" src="./JS/scripts.js" ></script>
 
 </body>
 
